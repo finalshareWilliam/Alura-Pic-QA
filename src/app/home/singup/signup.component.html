@@ -3,7 +3,8 @@
 <form #form="ngForm" [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
     <div class="form-group">
         <input #emailInput formControlName="email" class="form-control" data-test="email" placeholder="email" autofocus>
-        <ap-vmessage 
+        <ap-vmessage
+            data-test="email-error" 
             *ngIf="signupForm.get('email').errors?.required && (form.submitted || signupForm.get('email').touched)"
             text="Email is required!">
         </ap-vmessage>
